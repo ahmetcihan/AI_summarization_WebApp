@@ -1,0 +1,29 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Run React App",
+        "type": "npm",
+        "script": "start",
+        "path": "client/",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "problemMatcher": [],
+        "detail": "Run npm start in client folder",
+        "presentation": {
+          "reveal": "always",
+          "panel": "shared"
+        }
+      },
+      {
+        "label": "Open in Browser",
+        "type": "shell",
+        "command": "start http://localhost:3000",
+        "dependsOn": "Run React App",
+        "group": "none",
+        "problemMatcher": []
+      }
+    ]
+  }
