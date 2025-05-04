@@ -19,18 +19,6 @@ This is a simple web application built with Python and Flask that allows users t
 * **AI Services:** OpenAI API (Whisper for transcription, GPT-3.5 for summarization)
 * **Frontend:** HTML
 
-## File Structure
-.
-├── static/
-│   └── uploads/      # Stores uploaded MP3s, generated .txt transcriptions & summaries
-├── templates/
-│   ├── index.html    # Main upload page
-│   └── result.html   # Page to display results
-├── app.py            # Main Flask application logic
-├── requirements.txt  # Python dependencies
-├── .env              # Environment variables (contains OpenAI API Key - you need to paste your API key)
-└── README.md         # This file
-
 ## Setup & Installation
 
 1.  **Prerequisites:**
