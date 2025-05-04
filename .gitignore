@@ -1,6 +1,2 @@
-node_modules/
+venv/
 .env
-client/build/
-*.log
-__pycache__/
-*.pyc

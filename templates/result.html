@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcription & Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .content-box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+            white-space: pre-wrap;
+        }
+        .summary-box {
+            background-color: #e9f7ef;
+            border: 1px solid #82c59c;
+        }
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .button.secondary {
+            background-color: #2196F3;
+        }
+        .button.secondary:hover {
+            background-color: #0b7dda;
+        }
+        .button.download {
+            background-color: #ff9800;
+        }
+        .button.download:hover {
+            background-color: #e68a00;
+        }
+        .audio-player {
+            margin: 15px 0;
+            width: 100%;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Audio Processing Complete</h1>
+        
+        <div class="section">
+            <h2>Audio File</h2>
+            <audio controls class="audio-player">
+                <source src="{{ url_for('uploaded_file', filename=audio_file) }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        
+        <div class="section">
+            <h2>Transcription</h2>
+            <div class="content-box">{{ transcription }}</div>
+        </div>
+        
+        <div class="section">
+            <h2>Summary</h2>
+            <div class="content-box summary-box">{{ summary }}</div>
+        </div>
+        
+        <div class="buttons">
+            <a href="{{ url_for('uploaded_file', filename=text_file) }}" download class="button">Download Transcription</a>
+            <a href="{{ url_for('uploaded_file', filename=summary_file) }}" download class="button download">Download Summary</a>
+            <a href="{{ url_for('index') }}" class="button secondary">Process Another File</a>
+        </div>
+    </div>
+</body>
+</html>
